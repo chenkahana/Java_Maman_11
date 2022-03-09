@@ -5,10 +5,6 @@ public class Card {
     private Symbol symbol;
     private String value;
 
-    public Card(Symbol symbol, String value) {
-        setSymbol(symbol);
-        setValue(value);
-    }
 
     public Card(Symbol symbol, int value) {
         setSymbol(symbol);
@@ -23,36 +19,29 @@ public class Card {
         this.symbol = symbol;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
+    /**
+     * a method that signs a value to a card according to the given argument
+     *
+     * @param value
+     */
     public void setValue(int value) {
         if (value > 10 || value == 1) {
             switch (value) {
-                case 1:
-                    this.value = "Ace";
-                    break;
-                case 13:
-                    this.value = "King";
-                    break;
-                case 12:
-                    this.value = "Queen";
-                    break;
-                case 11:
-                    this.value = "Jack";
-                    break;
-                default:
-                    this.value = "ERROR";
+                case 1 -> this.value = "Ace";
+                case 13 -> this.value = "King";
+                case 12 -> this.value = "Queen";
+                case 11 -> this.value = "Jack";
+                default -> this.value = "ERROR";
             }
         } else
             this.value = "" + value;
     }
 
+    /**
+     * a method that returns the value of a card as an int
+     *
+     * @return an int representing the value of a card
+     */
     public int getNumberOfValue() {
         return switch (this.value) {
             case "Ace" -> 1;

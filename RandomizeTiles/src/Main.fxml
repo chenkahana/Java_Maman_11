@@ -9,6 +9,6 @@
             fx:controller="Controller">
     <children>
         <Button layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#randomizeTiles" text="Randomize"/>
-        <Canvas fx:id="myCanvas" height="350.0" layoutX="25.0" layoutY="100.0" width="350.0"/>
+        <Canvas fx:id="canvas" height="350.0" layoutX="25.0" layoutY="100.0" width="350.0"/>
     </children>
 </AnchorPane>
